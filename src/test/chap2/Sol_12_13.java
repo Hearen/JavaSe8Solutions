@@ -1,7 +1,7 @@
 package chap2;
 
 import static java.lang.System.out;
-import static util.Output.readFile;
+import static util.Output.readFileByLines;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +14,7 @@ import org.junit.Test;
 public class Sol_12_13 {
     @Test
     public void testCounter() {
-        List<String> lines = readFile();
+        List<String> lines = readFileByLines();
         testCounterArr(lines);
         testCounterBasic(lines);
         testGroupingBy(lines);
@@ -28,6 +28,7 @@ public class Sol_12_13 {
             }
         });
         Arrays.stream(counters).forEach(c -> out.print(c + ", "));
+        out.println("************");
     }
 
     private void testCounterArr(List<String> lines) {
@@ -45,5 +46,6 @@ public class Sol_12_13 {
                 .filter(s -> s.length() < 12)
                 .collect(Collectors.groupingBy(String::length, Collectors.counting()))
         .values().stream().forEach(c -> out.print(c + ", "));
+        out.println("************");
     }
 }
