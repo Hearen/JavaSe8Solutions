@@ -42,19 +42,27 @@ public final class Output {
         return new ArrayList<>();
     }
 
-    public static List<String> readFile() {
+    public static List<String> readFileByLines() {
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        InputStream is = loader.getResourceAsStream("file.txt");
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br
-                     = new BufferedReader(new InputStreamReader(is))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        } catch (IOException e) {
-
+        String content;
+        try {
+            content = new String(Files.readAllBytes(Paths.get(loader.getResource("file.txt").toURI())), StandardCharsets.UTF_8);
+            return Arrays.asList(content.split("[\\P{L}]+"));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return lines;
+        return new ArrayList<>();
+//        InputStream is = loader.getResourceAsStream("file.txt");
+//        List<String> lines = new ArrayList<>();
+//        try (BufferedReader br
+//                     = new BufferedReader(new InputStreamReader(is))) {
+//            String line;
+//            while ((line = br.readLine()) != null) {
+//                lines.add(line);
+//            }
+//        } catch (IOException e) {
+//
+//        }
+//        return lines;
     }
 }
