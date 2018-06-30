@@ -2,7 +2,7 @@ package chap2;
 
 import static java.lang.System.out;
 import static util.Constants.FILE_PATH;
-import static util.Output.readWords;
+import static util.Output.readWordsFromFilePath;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -13,7 +13,7 @@ public class Sol_1 {
     @Test
     public void testParallelStream() {
         AtomicInteger counter = new AtomicInteger(0);
-        readWords(FILE_PATH).stream().parallel()
+        readWordsFromFilePath(FILE_PATH).stream().parallel()
                 .filter(word -> word.length() > 12)
                 .forEach(word -> {
                     counter.getAndIncrement();
@@ -24,7 +24,7 @@ public class Sol_1 {
     @Test
     public void testBasic() {
         int count = 0;
-        for (String word : readWords(FILE_PATH)) {
+        for (String word : readWordsFromFilePath(FILE_PATH)) {
             if (word.length() > 12) {
                 count++;
             }

@@ -1,14 +1,14 @@
 package chap1;
 
-import static java.util.stream.Collectors.toList;
-import static util.Constants.ROOT_DIR;
-import static util.Output.printFilepaths;
+import org.junit.Test;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
+import static java.util.stream.Collectors.toList;
+import static util.Constants.ROOT_DIR;
+import static util.Output.printFilepaths;
 
 public class Sol_2 {
     private static List<File> listAllDirsUsingFileFilter(String rootDir) {

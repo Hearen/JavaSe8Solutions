@@ -1,7 +1,7 @@
 package chap2;
 
 import static java.lang.System.out;
-import static util.Output.readFileByLines;
+import static util.Output.readFileByWords;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +14,7 @@ import org.junit.Test;
 public class Sol_12_13 {
     @Test
     public void testCounter() {
-        List<String> lines = readFileByLines();
+        List<String> lines = readFileByWords();
         testCounterArr(lines);
         testCounterBasic(lines);
         testGroupingBy(lines);

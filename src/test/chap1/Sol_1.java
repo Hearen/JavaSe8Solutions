@@ -1,12 +1,12 @@
 package chap1;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
 
 public class Sol_1 {
     @Test
@@ -18,7 +18,7 @@ public class Sol_1 {
             threadNames.add(Thread.currentThread().getName());
             return Integer.valueOf(a).compareTo(b);
         });
-
+        System.out.println("okayokayokay");
         assertEquals(threadNames.size(), 1);
     }
 }

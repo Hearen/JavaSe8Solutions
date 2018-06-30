@@ -1,24 +1,20 @@
 package util;
 
-import static java.lang.System.out;
+import org.apache.commons.io.IOUtils;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Stream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import sun.misc.ClassLoaderUtil;
+import static java.lang.System.out;
 
 public final class Output {
     private Output() {
@@ -31,8 +27,7 @@ public final class Output {
         out.println(msg);
     }
 
-
-    public static List<String> readWords(String filePath) {
+    public static List<String> readWordsFromFilePath(String filePath) {
         try {
             String contents = new String(Files.readAllBytes(Paths.get(filePath)), StandardCharsets.UTF_8);
             return Arrays.asList(contents.split("[\\P{L}]+"));
@@ -42,7 +37,7 @@ public final class Output {
         return new ArrayList<>();
     }
 
-    public static List<String> readFileByLines() {
+    public static List<String> readFileByWords() {
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         String content;
         try {
@@ -64,5 +59,29 @@ public final class Output {
 //
 //        }
 //        return lines;
+    }
+
+    public static ArrayList<String> extractUrlsFromString(String content) {
+        ArrayList<String> result = new ArrayList<>();
+
+        String regex = "(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(content);
+        while (m.find()) {
+            result.add(m.group());
+        }
+
+        return result;
+    }
+
+    public static String getUrlContentsAsString(String urlAsString) {
+        try {
+            URL url = new URL(urlAsString);
+            String result = IOUtils.toString(url, StandardCharsets.UTF_8);
+            return result;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
