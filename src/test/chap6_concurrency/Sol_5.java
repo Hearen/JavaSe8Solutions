@@ -12,7 +12,7 @@ import static util.Output.readWordsFromFilePath;
 public class Sol_5 {
     @Test
     public void testConcurrentHashMap() {
-        File folder = new File("/Users/lhearen/programs/JavaSe8Solutions/src/test/chap1");
+        File folder = new File("/Users/lhearen/programs/JavaSe8Solutions/src/test/chap1_lambda_basic");
         Map<String, Set<File>> wordFileMap = new ConcurrentHashMap<>();
         Arrays.stream(folder.listFiles()).parallel().forEach(file -> {
             out.println(file.getPath());
