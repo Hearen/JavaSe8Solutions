@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 
@@ -16,7 +17,9 @@ public class Sol_11 {
                 "America/Los_Angeles", LocalDateTime.now().withHour(16).withMinute(40));
         long hour = duration / 3600;
         long minute = duration % 3600 / 60;
+        LocalTime gap = LocalTime.ofSecondOfDay(duration); // clever trick;
         out.println(hour + " Hours " + minute + " Minutes");
+        out.println(gap);
     }
 
     private Long getDuration(String startZoneId, LocalDateTime startDateTime, String endZoneId, LocalDateTime endDateTime) {
