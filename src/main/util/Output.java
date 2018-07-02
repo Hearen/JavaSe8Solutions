@@ -1,6 +1,6 @@
 package util;
 
-import org.apache.commons.io.IOUtils;
+import static java.lang.System.out;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static java.lang.System.out;
+import org.apache.commons.io.IOUtils;
 
 public final class Output {
     private Output() {
