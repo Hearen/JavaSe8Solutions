@@ -1,6 +1,6 @@
 package util;
 
-import static java.lang.System.out;
+import org.apache.commons.io.IOUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.IOUtils;
+import static java.lang.System.out;
 
 public final class Output {
     private Output() {
@@ -83,5 +83,15 @@ public final class Output {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public static <T> void printNotContained(List<T> list0, List<T> list1) {
+        List<T> tList = new ArrayList<>(list0);
+        tList.removeAll(list1);
+        System.out.println("List - 0 Have more: ");
+        tList.stream().forEach(System.out::println);
+        list1.removeAll(list0);
+        System.out.println("List - 1 Have more: ");
+        list1.stream().forEach(System.out::println);
     }
 }
