@@ -37,7 +37,7 @@ public class Sol_4 {
     private void printCalendar(int year, int month) {
         LocalDate startDay = LocalDate.of(year, month, 1);
         LocalDate endDay = startDay.plusMonths(1);
-        String calString = String.format("       %s %s     ", startDay.getMonth().getDisplayName(TextStyle.SHORT, Locale.US), year);
+        String calString = String.format("      %s %s     ", startDay.getMonth().getDisplayName(TextStyle.SHORT, Locale.US), year);
         calString += "\n Mo Tu We Th Fr Sa Su\n";
         LocalDate theDay = startDay;
 
@@ -53,6 +53,7 @@ public class Sol_4 {
             }
             theDay = theDay.plusDays(1);
         }
+        calString = calString.replaceAll("\n\\s+", "\n");
         out.println(calString);
     }
 }

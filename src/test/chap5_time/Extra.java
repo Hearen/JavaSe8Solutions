@@ -42,6 +42,37 @@ public class Extra {
                 seconds + " seconds.");
 
     }
+
+    @Test
+    public void testLocalDateTimeDurationUntil() {
+        LocalDateTime fromDateTime = LocalDateTime.of(1984, 12, 16, 7, 45, 55);
+        LocalDateTime toDateTime = LocalDateTime.of(2014, 9, 10, 6, 40, 45);
+
+        LocalDate tempDate = LocalDate.from( fromDateTime );
+
+        long years = tempDate.until(toDateTime.toLocalDate()).get(ChronoUnit.YEARS);
+        long months = tempDate.until(toDateTime.toLocalDate()).get(ChronoUnit.MONTHS);
+        long days = tempDate.until(toDateTime.toLocalDate()).get(ChronoUnit.DAYS);
+
+        LocalTime tempTime = LocalTime.from( fromDateTime );
+
+        long hours = tempTime.until( toDateTime.toLocalTime(), ChronoUnit.HOURS);
+        tempTime = tempTime.plusHours( hours );
+
+        long minutes = tempTime.until( toDateTime, ChronoUnit.MINUTES);
+        tempTime = tempTime.plusMinutes( minutes );
+
+        long seconds = tempTime.until( toDateTime, ChronoUnit.SECONDS);
+
+        //prints: 29 years 8 months 24 days 22 hours 54 minutes 50 seconds.
+        System.out.println( years + " years " +
+                months + " months " +
+                days + " days " +
+                hours + " hours " +
+                minutes + " minutes " +
+                seconds + " seconds.");
+
+    }
     @Test
     public void testLocalDateTimeDurationPrintUsingChronoUnit() {
         LocalDateTime fromDateTime = LocalDateTime.of(1984, 12, 16, 7, 45, 55);
