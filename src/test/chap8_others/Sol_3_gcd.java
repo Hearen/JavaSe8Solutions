@@ -10,15 +10,17 @@ import org.junit.Test;
 public class Sol_3_gcd {
     @Test
     public void testGcd() {
-        int a = Integer.MIN_VALUE;
-        int b = 6;
-        int testCount = 1_000_000;
+        int a = -2;
+        int b = 5;
+        int testCount = 10_000_000;
         out.println(gcdBasic(a, b));
         out.println(gcdBigInteger(a, b));
         out.println(gcdFloorMod(a, b));
+        out.println(gcdWithRem(a, b));
         getRunningTime(() -> { gcdBasic(a, b); }, testCount, "Basic");
         getRunningTime(() -> { gcdBigInteger(a, b); }, testCount, "BigInteger");
         getRunningTime(() -> { gcdFloorMod(a, b); }, testCount, "floorMod");
+        getRunningTime(() -> { gcdWithRem(a, b); }, testCount, "customRem");
     }
 
     private int gcdBasic(int a, int b) {
@@ -33,11 +35,19 @@ public class Sol_3_gcd {
         return a == 0 ? b : gcdFloorMod(Math.floorMod(b, a), a);
     }
 
-    private int gcdWithRem() {
-        return 0;
+    private int gcdWithRem(int a, int b) {
+        a = Math.abs(a);
+        b = Math.abs(b);
+        return a == 0 ? b : gcdWithRem(rem(b, a), a);
     }
 
     private int rem(int a, int b) {
-        return a % b; // what is an effective method?
+        if (a == b) {
+            return 0;
+        }
+        if (a < b) {
+            return a;
+        }
+        return a - (a / b) * b;
     }
 }
