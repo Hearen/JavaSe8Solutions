@@ -1,7 +1,6 @@
 package chap8_others;
 
-import static java.lang.System.out;
-import static util.ExceptionUtil.exWrapper;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -10,9 +9,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-import org.junit.Test;
+import static java.lang.System.out;
+import static util.ExceptionUtil.exWrapper;
 
-public class Sol_10 {
+public class Sol_10_file_walk {
     @Test
     public void testFileTraverse() {
         testWalk("/home/hearen/git/personal/Java-Demos");
