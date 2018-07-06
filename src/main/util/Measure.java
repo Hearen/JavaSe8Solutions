@@ -18,7 +18,7 @@ public class Measure {
             timeCosts.add((System.nanoTime() - start) / 1_000_000);
         }
         LongSummaryStatistics timeStatistics = timeCosts.stream().collect(Collectors.summarizingLong(Long::longValue));
-        timeCosts.forEach(timeCost -> out.println(String.format("TimeCost: %s", timeCost)));
+//        timeCosts.forEach(timeCost -> out.println(String.format("TimeCost: %s", timeCost)));
         out.println(String.format("%s - sum: %d - time cost summary (ms): %s", message, sum, timeStatistics));
         return timeStatistics;
     }

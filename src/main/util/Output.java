@@ -42,7 +42,7 @@ public final class Output {
         String content;
         try {
             content = new String(Files.readAllBytes(Paths.get(loader.getResource("file.txt").toURI())), StandardCharsets.UTF_8);
-            return Arrays.asList(content.split("[\\P{L}]+"));
+            return new ArrayList<>(Arrays.asList(content.split("[\\P{L}]+")));
         } catch (Exception e) {
             e.printStackTrace();
         }
