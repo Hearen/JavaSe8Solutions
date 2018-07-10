@@ -21,7 +21,7 @@ public class Sol_10_file_walk {
     private void testWalk(String rootPath) {
         try (Stream<Path> entries = Files.walk(Paths.get(rootPath)).onClose(() -> out.println("I am closing..."))) {
             entries.filter(path -> !Files.isDirectory(path) && path.toString().endsWith("java"))
-                    .filter(exWrapper(path -> Files.lines(path, StandardCharsets.UTF_8)
+                    .filter(exWrapper((Path path) -> Files.lines(path, StandardCharsets.UTF_8)
                             .anyMatch(line -> line.contains("transient")
                                     || line.contains("volatile")
                                     || line.contains("synchronized")))).forEach(out::println);
