@@ -1,4 +1,4 @@
-package chap8_others;
+package chap9_java_7;
 
 import org.junit.Test;
 import util.ExceptionUtil;
@@ -22,7 +22,7 @@ public class Sol_11_grep {
     @Test
     public void testRecursiveGrep() {
         String curPath = Paths.get("").toAbsolutePath().toString();
-        recursiveGrepTo("\\s*@Test\\s*", curPath + "/src/test", curPath + "/src/test/chap8_others/filtered.txt");
+        recursiveGrepTo("\\s*@Test\\s*", curPath + "/src/test", curPath + "/src/test/chap9_java_7/filtered.txt");
     }
 
     private void recursiveGrepTo(String patternStr, String rootPath, String outputPath) {
