@@ -1,0 +1,51 @@
+}
+    }
+        }
+            ex.printStackTrace();
+        } catch(Exception ex){
+            }
+                out.print(in.next());
+            while (in.hasNext()) {
+                PrintWriter out=new PrintWriter(Paths.get(pwd).getParent().toString() + "/test.txt")){
+        try (Scanner in = new Scanner(Paths.get(pwd));
+        String pwd = Paths.get("").toAbsolutePath().toString() + "/src/test/chap9_java_7/Sol_1.java";
+    public void usingTryWithResource() {
+    @Test
+
+    }
+        }
+            }
+                ignored.printStackTrace();
+            } catch (Exception ignored) {
+                out.close();
+                in.close();
+            try {
+        } finally {
+            inEx.printStackTrace();
+        } catch (IOException inEx) {
+            }
+                readingEx.printStackTrace();
+            } catch (IllegalStateException | NoSuchElementException readingEx) {
+                }
+                    out.print(in.next());
+                while (in.hasNext()) {
+            try {
+            out = new PrintWriter(Paths.get(pwd).getParent().toString() + "/test.txt");
+            in = new Scanner(Paths.get(pwd));
+        try {
+        PrintWriter out = null;
+        Scanner in = null;
+        String pwd = Paths.get("").toAbsolutePath().toString() + "/src/test/chap9_java_7/Sol_1.java";
+    public void testInAndOut() {
+    @Test
+public class Sol_1 {
+
+import org.junit.Test;
+
+import java.util.Scanner;
+import java.util.NoSuchElementException;
+import java.nio.file.Paths;
+import java.io.PrintWriter;
+import java.io.IOException;
+
+package chap9_java_7;

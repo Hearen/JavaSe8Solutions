@@ -1,17 +1,15 @@
+import static java.lang.System.out;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.joining;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Comparator;
-import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
-import java.util.concurrent.CompletableFuture;
-
-import static java.lang.System.out;
-import static java.util.stream.Collectors.*;
-import static util.Output.extractUrlsFromString;
-import static util.Output.getUrlContentsAsString;
 
 public class HelloWord {
     public static void main(String... args) {
@@ -46,7 +44,7 @@ public class HelloWord {
     private static void testCharCounting() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a String : ");
-        String str =scan.nextLine();
+        String str = scan.nextLine();
         String ret = str.chars().mapToObj(c -> (char) c).collect(groupingBy(c -> c, counting()))
                 .entrySet().stream().sorted(Comparator.comparing(Map.Entry::getValue))
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
