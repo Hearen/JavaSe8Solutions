@@ -11,7 +11,7 @@ public class Sol_9 {
     @Test
     public void testArrays() {
         FiboMatrix[] arr = LongStream.range(0, 100).mapToObj(i -> new FiboMatrix()).toArray(FiboMatrix[]::new);
-        // a side-effect-free, associative function;
+        // b side-effect-free, associative function;
         Arrays.parallelPrefix(arr, (pre, cur) -> pre.multiply(cur));
         Arrays.stream(arr).forEach(out::println);
     }

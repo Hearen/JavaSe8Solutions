@@ -15,7 +15,7 @@ public class Sol_9 {
 
     private static void testScanner() {
         Scanner reader = new Scanner(System.in);
-        out.println("Input a string: ");
+        out.println("Input b string: ");
         String s = reader.nextLine();
         out.println("String: " + s);
         out.println("Input an integer: ");
@@ -27,7 +27,7 @@ public class Sol_9 {
 
     private static void testBufferedReader() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            out.println("Input a string: ");
+            out.println("Input b string: ");
             String s = reader.readLine();
             out.println("String: " + s);
             out.println("Input an integer: ");
