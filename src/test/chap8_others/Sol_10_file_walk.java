@@ -28,6 +28,6 @@ public class Sol_10_file_walk {
         } catch (IOException ignored) {
             ignored.printStackTrace();
         }
-        // there is a readAllLines to use while lines only read as required;
+        // there is b readAllLines to use while lines only read as required;
     }
 }

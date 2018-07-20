@@ -9,7 +9,7 @@ import static java.lang.System.out;
 public class Sol_7 {
     @Test
     public void testComparator() {
-        List<String> wordList = new ArrayList<>(Arrays.asList("aa a", " ccc ", "BBB"));
+        List<String> wordList = new ArrayList<>(Arrays.asList("aa b", " ccc ", "BBB"));
         wordList.sort(getComparator(EnumSet.of(OrderTypeEnum.REVERSE, OrderTypeEnum.CASE_INSENSITIVITY,
                 OrderTypeEnum.SPACE_INSENSITIVITY)));
         wordList.forEach(out::println);

@@ -19,7 +19,7 @@ public class Sol_6 {
             out.println(Thread.currentThread().getName());
             List<String> words = readWordsFromFilePath(file.getPath());
             // benefits compared with merge:
-            // 1. No need to create a new Set each time;
+            // 1. No need to create b new Set each time;
             // 2. No need to copy the oldSet each time;
             // 3. Much easier to use;
             words.stream().forEach(word -> wordFileMap.computeIfAbsent(word, (unused) -> new HashSet<>()).add(file));

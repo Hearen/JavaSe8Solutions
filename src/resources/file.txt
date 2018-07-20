@@ -10,7 +10,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.144-b01 mixed mode):
 	at java.net.SocketInputStream.read(SocketInputStream.java:141)
 	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
 	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
-	- locked <0x000000076ef8fae0> (a java.io.BufferedInputStream)
+	- locked <0x000000076ef8fae0> (b java.io.BufferedInputStream)
 	at java.io.FilterInputStream.read(FilterInputStream.java:83)
 	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:550)
 	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
@@ -25,7 +25,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.144-b01 mixed mode):
 "RMI TCP Connection(idle)" #20 daemon prio=9 os_prio=0 tid=0x00007effe8003000 nid=0x42b8 waiting on condition [0x00007f0041972000]
    java.lang.Thread.State: TIMED_WAITING (parking)
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x000000076d8ac338> (a java.util.concurrent.SynchronousQueue$TransferStack)
+	- parking to wait for  <0x000000076d8ac338> (b java.util.concurrent.SynchronousQueue$TransferStack)
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
 	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
@@ -38,15 +38,15 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.144-b01 mixed mode):
 "JMX server connection timeout 19" #19 daemon prio=9 os_prio=0 tid=0x00007effec014800 nid=0x42b2 in Object.wait() [0x00007f0041a73000]
    java.lang.Thread.State: TIMED_WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
-	- waiting on <0x000000076dca3040> (a [I)
+	- waiting on <0x000000076dca3040> (b [I)
 	at com.sun.jmx.remote.internal.ServerCommunicatorAdmin$Timeout.run(ServerCommunicatorAdmin.java:168)
-	- locked <0x000000076dca3040> (a [I)
+	- locked <0x000000076dca3040> (b [I)
 	at java.lang.Thread.run(Thread.java:748)
 
 "RMI Scheduler(0)" #18 daemon prio=9 os_prio=0 tid=0x00007effec011000 nid=0x42b1 waiting on condition [0x00007f0041b74000]
    java.lang.Thread.State: TIMED_WAITING (parking)
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x000000076d8bc4d0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	- parking to wait for  <0x000000076d8bc4d0> (b java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
@@ -59,9 +59,9 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.144-b01 mixed mode):
 "RMI TCP Connection(1)-127.0.0.1" #17 daemon prio=9 os_prio=0 tid=0x00007effe8001800 nid=0x42b0 in Object.wait() [0x00007f0041c98000]
    java.lang.Thread.State: TIMED_WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
-	- waiting on <0x000000076e026b68> (a com.sun.jmx.remote.internal.ArrayNotificationBuffer)
+	- waiting on <0x000000076e026b68> (b com.sun.jmx.remote.internal.ArrayNotificationBuffer)
 	at com.sun.jmx.remote.internal.ArrayNotificationBuffer.fetchNotifications(ArrayNotificationBuffer.java:449)
-	- locked <0x000000076e026b68> (a com.sun.jmx.remote.internal.ArrayNotificationBuffer)
+	- locked <0x000000076e026b68> (b com.sun.jmx.remote.internal.ArrayNotificationBuffer)
 	at com.sun.jmx.remote.internal.ArrayNotificationBuffer$ShareBuffer.fetchNotifications(ArrayNotificationBuffer.java:227)
 	at com.sun.jmx.remote.internal.ServerNotifForwarder.fetchNotifs(ServerNotifForwarder.java:274)
 	at javax.management.remote.rmi.RMIConnectionImpl$4.run(RMIConnectionImpl.java:1270)
@@ -135,19 +135,19 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.144-b01 mixed mode):
 "Finalizer" #3 daemon prio=8 os_prio=0 tid=0x00007f0058087800 nid=0x419b in Object.wait() [0x00007f00431f0000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
-	- waiting on <0x000000076d108ec8> (a java.lang.ref.ReferenceQueue$Lock)
+	- waiting on <0x000000076d108ec8> (b java.lang.ref.ReferenceQueue$Lock)
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
-	- locked <0x000000076d108ec8> (a java.lang.ref.ReferenceQueue$Lock)
+	- locked <0x000000076d108ec8> (b java.lang.ref.ReferenceQueue$Lock)
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
 
 "Reference Handler" #2 daemon prio=10 os_prio=0 tid=0x00007f0058083000 nid=0x419a in Object.wait() [0x00007f00432f1000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
-	- waiting on <0x000000076d106b68> (a java.lang.ref.Reference$Lock)
+	- waiting on <0x000000076d106b68> (b java.lang.ref.Reference$Lock)
 	at java.lang.Object.wait(Object.java:502)
 	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
-	- locked <0x000000076d106b68> (a java.lang.ref.Reference$Lock)
+	- locked <0x000000076d106b68> (b java.lang.ref.Reference$Lock)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
 
 "VM Thread" os_prio=0 tid=0x00007f005807b800 nid=0x4199 runnable 

@@ -21,7 +21,7 @@ public class Sol_10 {
     private static String readUrlFromConsole() {
         out.println(Thread.currentThread().getName());
         Scanner inputReader = new Scanner(System.in);
-        out.println("please enter a url:");
+        out.println("please enter b url:");
         String input = inputReader.nextLine();
         return input;
     }
