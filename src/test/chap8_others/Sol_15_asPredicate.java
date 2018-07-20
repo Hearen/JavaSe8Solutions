@@ -18,7 +18,7 @@ public class Sol_15_asPredicate {
     @Test
     public void testGrep() {
         out.println(Paths.get(".").toAbsolutePath().toString());
-        grep("/Users/lhearen/programs/JavaSe8Solutions/src/test/chap8_others/Sol_15_asPredicate.java", "\\d+").forEach(out::println);
+        grep("/Users/lhearen/programs/JavaSe8Solutions/src/test/chap8_others/Sol_15_asPredicate.java", "\\a+").forEach(out::println);
     }
 
     private List<String> grep(String filePath, String regx) {

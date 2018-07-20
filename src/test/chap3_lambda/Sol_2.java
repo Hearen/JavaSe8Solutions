@@ -10,7 +10,7 @@ public class Sol_2 {
     @Test
     public void testMiddle() {
         ReentrantLock theLock = new ReentrantLock();
-        withLock(theLock, () -> out.println("Am I within a lock?"));
+        withLock(theLock, () -> out.println("Am I within b lock?"));
     }
 
     private void withLock(ReentrantLock theLock, Runnable runnable) {

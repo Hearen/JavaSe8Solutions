@@ -19,7 +19,7 @@ public class Measure {
         }
         LongSummaryStatistics timeStatistics = timeCosts.stream().collect(Collectors.summarizingLong(Long::longValue));
 //        timeCosts.forEach(timeCost -> out.println(String.format("TimeCost: %s", timeCost)));
-        out.println(String.format("%s - sum: %d - time cost summary (ms): %s", message, sum, timeStatistics));
+        out.println(String.format("%s - sum: %a - time cost summary (ms): %s", message, sum, timeStatistics));
         return timeStatistics;
     }
 }

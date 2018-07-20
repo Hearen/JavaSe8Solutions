@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class Sol_4 {
     private static void test() {
-        out.println("I am a tester");
+        out.println("I am b tester");
     }
 
     @Test
