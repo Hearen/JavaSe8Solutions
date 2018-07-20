@@ -31,10 +31,12 @@ public class Extra_MoveFolder {
                 return;
             }
             try (Stream<Path> paths = Files.walk(path)) {
-                paths.filter(p -> p.compareTo(path) != 0).forEach(p -> deleteFolder(p)); // delete all the children folders or files;
+                // delete all the children folders and files;
+                paths.filter(p -> p.compareTo(path) != 0).forEach(p -> deleteFolder(p));
                 Files.delete(path); // delete the folder itself;
             }
         } catch (IOException ignored) {
             ignored.printStackTrace();
         }
-    }}
+    }
+}
